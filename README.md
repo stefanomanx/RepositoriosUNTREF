@@ -1,4 +1,4 @@
-# Thrivos
+# UNTREF Modulo 3 - Automatización de pruebas
 
 <h2 align="center">
    <a href="#description">Description</a> |
