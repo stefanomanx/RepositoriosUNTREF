@@ -1,3 +1,5 @@
+# CLASE 13 & 14
+
 import time
 
 from selenium import webdriver
@@ -75,6 +77,8 @@ driver2.save_screenshot("resultado3_driver2.png")
 time.sleep(3)
 
 driver2.quit()
+
+time.sleep(3)
 
 # print()
 # input("*** Apretar Enter para terminar el script ***")
