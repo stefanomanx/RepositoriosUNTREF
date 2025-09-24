@@ -1,4 +1,4 @@
-# CLASE 15 - ASSERT
+# CLASE 15 - ASSERT - 18/09
 
 import time
 
@@ -28,10 +28,12 @@ driver.find_element(By.ID,'checkbox').click()
 time.sleep(5)
 
 driver.find_element(By.XPATH,"//button[@onclick='validateForm()']").click()
-print("hice click!")
+print("*** Click OK ***")
 
 mensaje_exito=driver.find_element(By.ID,"flashMessage").text
 
-assert 'Esto va a fallar' in mensaje_exito,'El texto no coincide con el mensaje de exito'
+assert 'Formulario enviado exitosamente' in mensaje_exito,'El texto no coincide con el mensaje de exito'
 
-time.sleep(10)
+time.sleep(5)
+
+driver.quit()
