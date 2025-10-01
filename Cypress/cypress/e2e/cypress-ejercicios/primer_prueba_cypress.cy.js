@@ -1,3 +1,4 @@
+/// <reference types="cypress" />
 
 describe ("Pruebas de Cypress de UNTREF", () => {
 
