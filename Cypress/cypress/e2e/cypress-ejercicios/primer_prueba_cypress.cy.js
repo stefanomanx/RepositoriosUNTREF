@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe("Pruebas de Cypress de UNTREF", () => {
+describe("Primer prueba de Cypress de UNTREF", () => {
     beforeEach(() => {
         // Interceptar cualquier petición a dominios de Optimizely (incluye subdominios dinámicos)
         cy.intercept('GET', /log\.optimizely\.com/, { statusCode: 200, body: '' }).as('Optimizely');
