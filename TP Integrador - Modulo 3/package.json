@@ -1,0 +1,12 @@
+{
+  "name": "tp-integrador-modulo-3",
+  "version": "1.0.0",
+  "scripts": {
+    "cypress:run": "cypress run --spec \"cypress/e2e/**/Ejercicio_3*.cy.js\" --reporter mochawesome --reporter-options reportDir=reports,overwrite=false,html=true,json=false"
+  },
+  "devDependencies": {
+    "cypress": "^15.5.0",
+    "cypress-mochawesome-reporter": "^4.0.2",
+    "mochawesome": "^2.0.5"
+  }
+}
