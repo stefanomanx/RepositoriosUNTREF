@@ -2,11 +2,30 @@
   "name": "tp-integrador-modulo-3",
   "version": "1.0.0",
   "scripts": {
-    "cypress:run": "cypress run --spec \"cypress/e2e/**/Ejercicio_3*.cy.js\" --reporter mochawesome --reporter-options reportDir=reports,overwrite=false,html=true,json=false"
+  "cypress:run:web": "cypress run --spec \"Cypress/cypress/e2e/**/Ejercicio_3_WEB.cy.js\" --reporter mochawesome --reporter-options reportDir=reports/web,json=true,html=false",
+  "cypress:run:api": "cypress run --spec \"Cypress/cypress/e2e/**/Ejercicio_3_API.cy.js\" --reporter mochawesome --reporter-options reportDir=reports/api,json=true,html=false",
+  "report:merge:web": "node ./scripts/mergeReports.js web",
+  "report:generate:web": "node ./scripts/generateReports.js web",
+  "report:merge:api": "node ./scripts/mergeReports.js api",
+  "report:generate:api": "node ./scripts/generateReports.js api",
+  "test:report:web": "npm run cypress:run:web && npm run report:merge:web && npm run report:generate:web",
+  "test:report:api": "npm run cypress:run:api && npm run report:merge:api && npm run report:generate:api",
+  "test:report:all": "npm run test:report:web && npm run test:report:api",
+  "test:report": "npm run test:report:all",
+  "report:merge:combined": "node ./scripts/mergeAllReports.js",
+  "report:generate:combined": "node ./scripts/createCombinedHtml.js",
+  "test:report:combined": "npm run test:report:web && npm run test:report:api && npm run report:merge:combined && npm run report:generate:combined",
+  "report:generate:standalone": "node ./scripts/createStandaloneCombined.js",
+  "test:report:standalone": "npm run test:report:web && npm run test:report:api && npm run report:merge:combined && npm run report:generate:standalone"
   },
   "devDependencies": {
     "cypress": "^15.5.0",
     "cypress-mochawesome-reporter": "^4.0.2",
-    "mochawesome": "^2.0.5"
+    "mochawesome": "^2.0.5",
+    "mochawesome-merge": "^5.0.0",
+    "mochawesome-report-generator": "^6.3.0"
+  },
+  "dependencies": {
+    "yargs": "^18.0.0"
   }
 }
